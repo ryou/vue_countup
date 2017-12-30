@@ -40,6 +40,22 @@ module.exports = {
           name: 'images/[name].[ext]?[hash]',
         },
       },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          /* TODO: 以下に関して調査
+           * 公式に記載の書き方にも関わらず。ここが有効だとエラーが発生
+           * https://github.com/babel/babel-loader
+           */
+          // options: {
+          //   presets: [
+          //     '@babel/preset-env',
+          //   ],
+          // },
+        },
+      },
     ],
   },
   // webpack-dev-serverのオプション
