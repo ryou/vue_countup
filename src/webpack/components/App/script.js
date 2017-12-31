@@ -14,16 +14,13 @@ export default {
   methods: {
     clickPanel(number) {
       if (number === this.nextPanel) {
-        this.panels.forEach((panel) => {
-          if (panel.number === number) {
-            panel.isDisabled = true;
+        const index = this.panels.findIndex(panel => panel.number === number);
+        this.panels[index].isDisabled = true;
 
-            if (number === this.panelNum) {
-              this.isGameOver = true;
-              window.cancelAnimationFrame(this.animationId);
-            }
-          }
-        });
+        if (number === this.panelNum) {
+          this.isGameOver = true;
+          window.cancelAnimationFrame(this.animationId);
+        }
       }
     },
     gameStart() {
