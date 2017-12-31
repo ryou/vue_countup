@@ -15,8 +15,13 @@
       </div>
     </div>
     <modal-component
+      v-if="isReady"
+      :is-visible="true"
+      @click.native="gameStart"
+    >Click to Start</modal-component>
+    <modal-component
       :is-visible="isGameOver"
-    ></modal-component>
+    >GAME OVER</modal-component>
   </div>
 </template>
 

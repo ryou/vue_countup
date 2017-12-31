@@ -6,7 +6,7 @@
     }"
   >
     <div class="Modal_body">
-      GAME OVER
+      <slot></slot>
     </div>
   </div>
 </template>

@@ -4,6 +4,7 @@ export default {
       animationId: null,
       panelNum: 24,
       panels: [],
+      isReady: true,
       isGameOver: false,
       time: {
         start: null,
@@ -24,6 +25,10 @@ export default {
       }
     },
     gameStart() {
+      this.isReady = false;
+
+      this.createPanels();
+
       this.time.start = Date.now();
 
       const mainLoop = () => {
@@ -75,11 +80,5 @@ export default {
       const s = Math.floor(pastTime / 1000);
       return `${s}.${ms}`;
     },
-  },
-  created() {
-    this.createPanels();
-  },
-  mounted() {
-    this.gameStart();
   },
 };
