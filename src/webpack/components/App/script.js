@@ -1,3 +1,5 @@
+import Utility from '../../libs/Utility';
+
 export default {
   data() {
     return {
@@ -27,7 +29,7 @@ export default {
     gameStart() {
       this.isReady = false;
 
-      this.createPanels();
+      this.initPanels();
 
       this.time.start = Date.now();
 
@@ -41,24 +43,17 @@ export default {
     updateTime() {
       this.time.current = Date.now();
     },
-    createPanels() {
+    initPanels() {
+      const tmpArray = [];
       for (let i = 0; i < this.panelNum; i += 1) {
         const tmp = {
           number: i + 1,
           isDisabled: false,
         };
-        this.panels.push(tmp);
+        tmpArray.push(tmp);
       }
 
-      // 配列をシャッフル
-      // 参考：https://qiita.com/artistan/items/9eb9a0fb14f4ec3a8764
-      for (let i = this.panels.length - 1; i >= 0; i -= 1) {
-        // 0~iのランダムな数値を取得
-        const rand = Math.floor(Math.random() * (i + 1));
-
-        // 配列の数値を入れ替える
-        [this.panels[i], this.panels[rand]] = [this.panels[rand], this.panels[i]];
-      }
+      this.panels = Utility.shuffle(tmpArray);
     },
   },
   computed: {
