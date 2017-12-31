@@ -21,7 +21,10 @@
     >Click to Start</modal-component>
     <modal-component
       :is-visible="isGameOver"
-    >GAME OVER</modal-component>
+    >
+      <div class="u-text-center u-font-weight-bold">Result</div>
+      <div class="u-text-center">{{ displayTime }}</div>
+    </modal-component>
   </div>
 </template>
 
