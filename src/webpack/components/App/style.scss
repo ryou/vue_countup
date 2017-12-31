@@ -105,21 +105,3 @@ Blocks
   width: 25%;
   box-sizing: border-box;
 }
-
-.Panel {
-  padding: 15px;
-
-  font-size: 20px;
-  color: #fff;
-  text-align: center;
-
-  background: #1abc9c;
-
-  &:not(.-disabled) {
-    cursor: pointer;
-  }
-
-  &.-disabled {
-    opacity: .2;
-  }
-}
