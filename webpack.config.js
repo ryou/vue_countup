@@ -1,6 +1,25 @@
 const path = require('path');
 const webpack = require('webpack');
 
+/* 環境設定ロード
+----------------------------------------------------------*/
+const env = {
+  host: 'localhost',
+  port: 8080,
+};
+try {
+  const localEnv = require('./.env'); // eslint-disable-line global-require
+  Object.assign(env, localEnv);
+} catch (e) {
+  switch (e.code) {
+    case 'MODULE_NOT_FOUND':
+      console.log('.envファイルが存在しません。デフォルトの設定で起動します。');
+      break;
+    default:
+      throw e;
+  }
+}
+
 module.exports = {
   entry: {
     bundle: './src/webpack/main.js',
@@ -72,6 +91,9 @@ module.exports = {
     // webpackによりコンパイルされたファイルが配置されるディレクトリ
     // 「publicPath: '/assets/'」の場合「http://hoge.com/assets/bundle.js」みたいな感じで出力される
     publicPath: '/assets/',
+
+    host: env.host,
+    port: env.port,
   },
 };
 
