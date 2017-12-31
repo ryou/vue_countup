@@ -1,4 +1,4 @@
-import Utility from '../../libs/Utility';
+import _ from 'lodash';
 
 export default {
   data() {
@@ -53,7 +53,7 @@ export default {
         tmpArray.push(tmp);
       }
 
-      this.panels = Utility.shuffle(tmpArray);
+      this.panels = _.shuffle(tmpArray);
     },
   },
   computed: {
