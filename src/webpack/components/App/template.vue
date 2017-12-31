@@ -18,12 +18,14 @@
       v-if="isReady"
       :is-visible="true"
       @click.native="gameStart"
-    >Click to Start</modal-component>
+    >
+      <div class="u-text-center u-font-size-ex-large">Click to Start</div>
+    </modal-component>
     <modal-component
       :is-visible="isGameOver"
     >
-      <div class="u-text-center u-font-weight-bold">Result</div>
-      <div class="u-text-center">{{ displayTime }}</div>
+      <div class="u-text-center u-font-size-ex-large u-mb-10">Result</div>
+      <div class="u-text-center u-font-size-ex-large">{{ displayTime }}</div>
     </modal-component>
   </div>
 </template>

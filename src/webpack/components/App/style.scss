@@ -7,6 +7,10 @@ html, body {
   height: 100%;
 }
 
+body {
+  font-family: 'VT323', monospace;
+}
+
 #app {
   display: flex;
   flex-direction: column;
@@ -22,6 +26,16 @@ Utilities
 
 /* Text
 ----------------------------------------------------------*/
+.u-font-size-small {
+  font-size: 14px;
+}
+.u-font-size-normal {
+  font-size: 16px;
+}
+.u-font-size-ex-large {
+  font-size: 30px;
+}
+
 .u-text-left {
   text-align: left;
 }
@@ -40,6 +54,21 @@ Utilities
 }
 .u-font-weight-bold {
   font-weight: bold;
+}
+
+/* Spacing
+----------------------------------------------------------*/
+.u-mt-10 {
+  margin-top: 10px;
+}
+.u-mr-10 {
+  margin-right: 10px;
+}
+.u-mb-10 {
+  margin-bottom: 10px;
+}
+.u-ml-10 {
+  margin-left: 10px;
 }
 
 
