@@ -60,9 +60,7 @@ export default {
     nextPanel() {
       let min = this.panelNum;
 
-      const activePanels = this.panels.filter((panel) => {
-        return panel.isDisabled === false;
-      });
+      const activePanels = this.panels.filter(panel => panel.isDisabled === false);
       activePanels.forEach((panel) => {
         if (panel.number < min) {
           min = panel.number;
