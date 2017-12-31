@@ -39,18 +39,18 @@ module.exports = {
             scss: [
               'vue-style-loader',
               'css-loader',
-              'sass-loader',
+              {
+                loader: 'sass-loader',
+                options: {
+                  data: '@import "_init";',
+                  includePaths: [
+                    path.resolve(__dirname, 'src/webpack/scss/_imports'),
+                  ],
+                },
+              },
             ],
           },
         },
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
