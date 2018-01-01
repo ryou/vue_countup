@@ -31,4 +31,5 @@
 </template>
 
 <script src="./script.js"></script>
-<style lang="scss" src="./style.scss"></style>
+<style lang="scss" src="./common.scss"></style>
+<style lang="scss" src="./style.scss" scoped></style>
