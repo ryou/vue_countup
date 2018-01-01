@@ -2,7 +2,7 @@
   <div class="Container">
     <h1 class="u-text-center u-font-size-ex-large u-mb-20">Count Up</h1>
     <div class="u-text-center">
-      <btn-component @click.native="toGame">
+      <btn-component @click.native="$store.commit('changeView', 'game')">
         GameStart
       </btn-component>
     </div>

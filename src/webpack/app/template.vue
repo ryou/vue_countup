@@ -2,9 +2,7 @@
   <div id="app">
     <transition name="fade" mode="out-in">
       <component
-        :is="currentView"
-        @to-game="changeView('game')"
-        @to-top="changeView('top')"
+        :is="$store.getters.currentView"
       ></component>
     </transition>
   </div>

@@ -24,7 +24,7 @@
       <div class="u-text-center u-font-size-ex-large u-mb-20">{{ displayTime }}</div>
       <div class="u-text-center">
         <btn-component @click.native="retry">Retry</btn-component>
-        <btn-component @click.native="toTop">Top</btn-component>
+        <btn-component @click.native="$store.commit('changeView', 'top')">Top</btn-component>
       </div>
     </modal-component>
   </div>
