@@ -1,17 +1,18 @@
 import _ from 'lodash';
+import Loop from '../../libs/LoopController';
 
 export default {
   data() {
     return {
-      animationId: null,
       panelNum: 24,
       panels: [],
       isReady: true,
       isGameOver: false,
       time: {
-        start: null,
-        current: null,
+        start: 0,
+        current: 0,
       },
+      loopController: null,
     };
   },
   methods: {
@@ -21,8 +22,7 @@ export default {
         this.panels[index].isDisabled = true;
 
         if (number === this.panelNum) {
-          this.isGameOver = true;
-          window.cancelAnimationFrame(this.animationId);
+          this.gameOver();
         }
       }
     },
@@ -33,12 +33,12 @@ export default {
 
       this.time.start = Date.now();
 
-      const mainLoop = () => {
-        this.animationId = window.requestAnimationFrame(mainLoop);
-
-        this.updateTime();
-      };
-      mainLoop();
+      this.loopController = new Loop(this.updateTime);
+      this.loopController.start();
+    },
+    gameOver() {
+      this.isGameOver = true;
+      this.loopController.pause();
     },
     updateTime() {
       this.time.current = Date.now();
