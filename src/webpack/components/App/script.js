@@ -41,6 +41,13 @@ export default {
       this.isGameOver = true;
       this.loopController.pause();
     },
+    retry() {
+      this.isReady = true;
+      this.isGameOver = false;
+      this.time.start = 0;
+      this.time.current = 0;
+      this.panels = [];
+    },
     updateTime() {
       this.time.current = Date.now();
     },

@@ -25,7 +25,10 @@
       :is-visible="isGameOver"
     >
       <div class="u-text-center u-font-size-ex-large u-mb-10">Result</div>
-      <div class="u-text-center u-font-size-ex-large">{{ displayTime }}</div>
+      <div class="u-text-center u-font-size-ex-large u-mb-20">{{ displayTime }}</div>
+      <div class="u-text-center">
+        <btn-component @click.native="retry">Retry</btn-component>
+      </div>
     </modal-component>
   </div>
 </template>
