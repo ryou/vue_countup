@@ -24,9 +24,17 @@ export default new Vuex.Store({
     changeView(state, view) {
       state.view = view;
     },
+    initScore(state) {
+      const highScore = localStorage.getItem('highScore');
+
+      if (highScore !== null) {
+        state.highScore = highScore;
+      }
+    },
     sendScore(state, score) {
       if (state.highScore === null || score < state.highScore) {
         state.highScore = score;
+        localStorage.setItem('highScore', score);
       }
     },
   },
