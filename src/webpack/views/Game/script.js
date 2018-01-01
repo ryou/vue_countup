@@ -40,6 +40,8 @@ export default {
     gameOver() {
       this.isGameOver = true;
       this.loopController.pause();
+
+      this.$store.commit('sendScore', this.displayTime);
     },
     retry() {
       this.isReady = true;

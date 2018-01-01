@@ -13,6 +13,7 @@ const views = {
 export default new Vuex.Store({
   state: {
     view: 'top',
+    highScore: null,
   },
   getters: {
     currentView(state) {
@@ -21,7 +22,12 @@ export default new Vuex.Store({
   },
   mutations: {
     changeView(state, view) {
-      this.state.view = view;
+      state.view = view;
+    },
+    sendScore(state, score) {
+      if (state.highScore === null || score < state.highScore) {
+        state.highScore = score;
+      }
     },
   },
 });
