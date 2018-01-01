@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-import AppComponent from './components/App/template.vue';
+import AppComponent from './app/template.vue';
 import PanelComponent from './components/Panel/template.vue';
 import ModalComponent from './components/Modal/template.vue';
 import BtnComponent from './components/Btn/template.vue';

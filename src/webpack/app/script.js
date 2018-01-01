@@ -1,5 +1,5 @@
-import TopView from '../../views/Top/template.vue';
-import GameView from '../../views/Game/template.vue';
+import TopView from '../views/Top/template.vue';
+import GameView from '../views/Game/template.vue';
 
 const views = {
   top: TopView,
