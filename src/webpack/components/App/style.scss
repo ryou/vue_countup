@@ -22,24 +22,12 @@ Blocks
   margin: 0 auto;
 }
 
-.Time {
-  font-size: 20px;
-  text-align: center;
-  font-family: $mainFont;
-
-  margin-bottom: 20px;
+/***********************************************************************
+Transition
+**********************************************************************/
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
 }
-
-.Numlist {
-  display: flex;
-  flex-wrap: wrap;
-
-  margin-top: -10px;
-  margin-left: -10px;
-}
-.Numlist_item {
-  padding-top: 10px;
-  padding-left: 10px;
-  width: 25%;
-  box-sizing: border-box;
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0
 }

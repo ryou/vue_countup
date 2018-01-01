@@ -1,0 +1,21 @@
+.Time {
+  font-size: 20px;
+  text-align: center;
+  font-family: $mainFont;
+
+  margin-bottom: 20px;
+}
+
+.Numlist {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-top: -10px;
+  margin-left: -10px;
+}
+.Numlist_item {
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 25%;
+  box-sizing: border-box;
+}
