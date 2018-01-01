@@ -1,10 +1,11 @@
 import _ from 'lodash';
 import Loop from '../../libs/LoopController';
 
+const PANEL_NUM = 24;
+
 export default {
   data() {
     return {
-      panelNum: 24,
       panels: [],
       isReady: true,
       isGameOver: false,
@@ -21,7 +22,7 @@ export default {
         const index = this.panels.findIndex(panel => panel.number === number);
         this.panels[index].isDisabled = true;
 
-        if (number === this.panelNum) {
+        if (number === PANEL_NUM) {
           this.gameOver();
         }
       }
@@ -45,7 +46,7 @@ export default {
     },
     initPanels() {
       const tmpArray = [];
-      for (let i = 0; i < this.panelNum; i += 1) {
+      for (let i = 0; i < PANEL_NUM; i += 1) {
         const tmp = {
           number: i + 1,
           isDisabled: false,
@@ -58,7 +59,7 @@ export default {
   },
   computed: {
     nextPanel() {
-      let min = this.panelNum;
+      let min = PANEL_NUM;
 
       const activePanels = this.panels.filter(panel => panel.isDisabled === false);
       activePanels.forEach((panel) => {
