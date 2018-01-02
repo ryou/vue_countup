@@ -101,6 +101,11 @@ module.exports = {
 // https://github.com/vuejs-templates/webpack-simple/blob/master/template/webpack.config.js
 if (process.env.NODE_ENV === 'production') {
   module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"',
+      },
+    }),
     new webpack.optimize.UglifyJsPlugin({
 
     }),
